@@ -50,7 +50,7 @@
                             <i class="fas fa-fire mr-3"></i>
                             Fire Incidents
                         </a>
-                        <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                        <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                             <i class="fas fa-ambulance mr-3"></i>
                            Ambulance
                         </a>

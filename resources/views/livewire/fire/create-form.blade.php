@@ -1,9 +1,9 @@
-<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" x-data="{ open:true}">
     <div class="mt-10 sm:mt-0">
         <div class="md:grid grid-cols-5">
           <div class="col-start-2 mt-5 md:mt-0 col-span-3">
             @if (session()->has('sucess'))
-              <div class="bg-green-100 w-100 py-5 border-green-500 border-l-8 px-3 my-2 text-gray-600">
+              <div x-show="open" x-transition.duration.500ms class="bg-green-100 w-100 py-5 border-green-500 border-l-8 px-3 my-2 text-gray-600">
                   {{ session('sucess') }}
               </div>
             @endif

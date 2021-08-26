@@ -34,10 +34,10 @@ class Create extends Component
     }
 
 
-    public function mount(Crew $crew)
-    {
-        dd($crew);
-    }
+    // public function mount(Crew $crew)
+    // {
+    //     dd($crew);
+    // }
     public function resetForm()
     {
      $this->fire_date='';
