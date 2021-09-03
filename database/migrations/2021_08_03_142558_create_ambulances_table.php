@@ -20,12 +20,12 @@ class CreateAmbulancesTable extends Migration
             $table->string('patient_address');
             $table->string('caller_name');
             $table->string('time_collected');
-            $table->string('depature_tiem');
+            $table->string('depature_time');
             $table->string('hospital_arrival_time');
             $table->string('handed_time');
-            $table->string('crew');
+            $table->foreignId('crew_id')->on('crews');
             $table->string('Officer_in_charge');
-            $table->string('crew_commander');
+            $table->string('commander');
             $table->timestamps();
         });
     }

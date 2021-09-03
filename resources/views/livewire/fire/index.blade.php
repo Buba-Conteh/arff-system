@@ -3,8 +3,9 @@
    <i class="fas fa-list mr-3"></i> Fire Informative lists
   </p>
   <div class="flex justify-end sm:px-6 lg:px-8 py-4 ">
+    
     <a href={{ url('/fire/create') }} >
-    <button  class="bg-green-400 p-4 w-full cta-btn font-semibold py-2 mt-2 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">New Report</button>
+    <button  class="bg-red-600 p-4 w-full cta-btn font-semibold py-2 mt-2 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-red-400 flex items-center justify-center">New Report</button>
     </a>
   </div>
   <div class="bg-white overflow-auto">
@@ -50,15 +51,15 @@
                  <td class="py-4 px-6 border-b border-grey-light">
                     {{$fire->extinction_time}}
                 </td>
-                <td class="py-4 px-4 border-b border-grey-light">
+                <td class="py-4 px-1 border-b border-grey-light">
                     <a href="/fire/view/{{$fire->id}}" class="text-indigo-600 hover:text-indigo-900">
-                      <i class="fas fa-eye"></i>
+                      <i class="fas fa-eye">view</i>
                     </a>
                   <a href="/fire/edit/{{$fire->id}}" class="text-green-600 hover:text-green-900">
-                    <i class="fas fa-edit    "></i>
+                    <i class="fas fa-edit    ">eddit</i>
                   </a>
                   <a href="#" class="text-indigo-600 hover:text-indigo-900">
-                    <i class="fa fa-trash text-red-500" aria-hidden="true"></i>
+                    <i class="fa fa-trash text-red-500" aria-hidden="true">delete</i>
                     {{-- <button class="bg-red-500 px-2 text-white rounded-sm">Delete</button> --}}
                   </a>
 

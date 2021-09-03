@@ -1,4 +1,5 @@
 <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" x-data="{ open:true}">
+  <h2 class="text-xl">New Fire / Incident</h2>
     <div class="mt-10 sm:mt-0">
         <div class="md:grid grid-cols-5">
           <div class="col-start-2 mt-5 md:mt-0 col-span-3">

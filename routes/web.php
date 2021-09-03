@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Ambulance\Create as AmbulanceCreate;
+use App\Http\Livewire\Ambulance\Index as AmbulanceIndex;
 use App\Http\Livewire\Crews\Create;
 use App\Http\Livewire\Crews\Index as CrewsIndex;
 use App\Http\Livewire\Fire\CreateForm;
@@ -23,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
     
 });
 
@@ -39,6 +41,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/crews/create', Create::cl
 Route::middleware(['auth:sanctum', 'verified'])->get('/fire-meduims', FireMediumsIndex::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('/fire-meduims/create', FireMediumsCreate::class);
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/ambulance', AmbulanceIndex::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('/ambulance/create', AmbulanceCreate::class);
 
 
 

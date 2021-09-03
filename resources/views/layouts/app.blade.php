@@ -34,10 +34,10 @@
 
             <!-- Page Content -->
             <main class="flex">
-                <aside class="relative bg-blue-600 min-h-screen w-64 hidden sm:block shadow-xl">
+                <aside class="relative bg-gray-800 min-h-screen w-64 hidden sm:block shadow-xl">
                     <div class="p-6">
-                        <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
-                        <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+                        <a href="index.html" class="text-white text-2xl font-semibold uppercase hover:text-gray-300 text-center">ARFFS</a>
+                        <button class="w-full bg-red-600 cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-red-400 flex items-center justify-center">
                            <i class="fas fa-plus mr-3"></i> New Report
                         </button>
                     </div>
@@ -67,7 +67,7 @@
              
                 </aside>
 
-             <div class="w-full flex flex-col h-100 overflow-x-hidden">
+             <div class="w-full flex flex-col h-100 overflow-x-hidden relative">
                 @livewire('navigation-menu')
                 {{ $slot }}
              </div>

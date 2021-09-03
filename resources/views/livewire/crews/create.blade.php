@@ -3,7 +3,7 @@
     <div class="from-green-300 bg-gradient-to-r w-100 p-5 absolute right-5 border-t-8 border-green-500 transition duration-500 ease-in-ou" >
         <i class=" text-white fas fa-thumbs-up " aria-hidden="true"></i>
 
-        {{ session('sucess') }}
+  {{ session('sucess') }}
         
     </div>
     @endif
