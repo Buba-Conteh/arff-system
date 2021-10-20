@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <script src="https://kit.fontawesome.com/f5ade48764.js" crossorigin="anonymous"></script>
+        {{-- <script src="https://kit.fontawesome.com/f5ade48764.js" crossorigin="anonymous"></script> --}}
         @livewireStyles
 
         <!-- Scripts -->
@@ -50,18 +50,30 @@
                             <i class="fas fa-fire mr-3"></i>
                             Fire Incidents
                         </a>
-                        <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                        <a href="{{url('/ambulance')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                             <i class="fas fa-ambulance mr-3"></i>
                            Ambulance
-                        </a>
-                        <a href="{{url('/crews')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                          <i class="fas fa-users mr-3"></i>
-                            Crews
                         </a>
                         <a href="{{url('/fire-meduims')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                             <i class="fas fa-fire-extinguisher mr-3"></i>
                             Mediums
                         </a>
+                        <a href="{{url('/crews')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                          <i class="fas fa-users mr-3"></i>
+                            Crews
+                        </a>
+
+                        <a href="{{url('/ranks')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                            <i class="fas fa-shield-alt mr-3"></i>
+                          {{-- <i class="fas fa-users mr-3"></i> --}}
+                            Ranks
+                        </a>
+                        <a href="{{url('/personnel')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                            <i class="fas fa-shield-alt mr-3"></i>
+                          {{-- <i class="fas fa-users mr-3"></i> --}}
+                            Personnels
+                        </a>
+                       
                         
                     </nav>
              

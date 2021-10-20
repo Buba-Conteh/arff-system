@@ -22,7 +22,7 @@
                     <th class="py-4 px-1 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Handed Time</th>
                     <th class="py-4 px-1 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Crew</th>
                     
-                    <th class="py-4 px-1 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Officer In Charge</th>
+                    <th title="Officer In Charge" class="py-4 px-1 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">O.I.C</th>
                     <th class="py-4 px-1 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Actoin</th>
                 </tr>
             </thead>
@@ -56,21 +56,21 @@
                       {{$ambulance->handed_time}}
                   </td>
                   <td class="py-4 px-1 border-b border-grey-light">
-                      {{$ambulance->$crew}}
+                      {{$ambulance->crew->name}}
                   </td>
                   <td class="py-4 px-1 border-b border-grey-light">
                       {{$ambulance->Officer_in_charge}}
                   </td>
                  
                   <td class="py-4 px-1 border-b border-grey-light">
-                      <a href="/fire/view/{{$ambulance->id}}" class="text-indigo-600 hover:text-indigo-900">
-                        <i class="fas fa-eye">view</i>
+                      <a href="/ambulance/view/{{$ambulance->id}}" class="hover:text-gray-500" title="view">
+                        <i class="fas fa-eye"></i>
                       </a>
-                    <a href="/fire/edit/{{$ambulance->id}}" class="text-green-600 hover:text-green-900">
-                      <i class="fas fa-edit    ">eddit</i>
+                    <a href="/ambulance/edit/{{$ambulance->id}}" class="hover:text-gray-500" title="edit">
+                      <i class="fas fa-edit    "></i>
                     </a>
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900">
-                      <i class="fa fa-trash text-red-500" aria-hidden="true">delete</i>
+                    <a href="#" class="hover:text-gray-500" title="delete">
+                      <i class="fa fa-trash " aria-hidden="true"></i>
                       {{-- <button class="bg-red-500 px-2 text-white rounded-sm">Delete</button> --}}
                     </a>
   

@@ -9,7 +9,8 @@ class Index extends Component
 {
     public function render()
     {
-        $ambulances=Ambulance::all();
+        $ambulances=Ambulance::with('crew')->get();
+        // dd($ambulances);
         return view('livewire.ambulance.index', compact('ambulances'));
     }
 }

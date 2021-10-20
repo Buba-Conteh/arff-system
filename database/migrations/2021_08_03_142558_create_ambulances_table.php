@@ -25,7 +25,7 @@ class CreateAmbulancesTable extends Migration
             $table->string('handed_time');
             $table->foreignId('crew_id')->on('crews');
             $table->string('Officer_in_charge');
-            $table->string('commander');
+            $table->string('crew_commander');
             $table->timestamps();
         });
     }

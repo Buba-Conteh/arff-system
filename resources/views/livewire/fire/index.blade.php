@@ -1,13 +1,46 @@
-<div class="w-full mt-4 p-4 box-border">
+<div class="w-full mt-4 p-4 box-border" x-data={showFilter:false}>
   <p class="text-xl pb-1 flex items-center">
    <i class="fas fa-list mr-3"></i> Fire Informative lists
   </p>
   <div class="flex justify-end sm:px-6 lg:px-8 py-4 ">
     
+    <a class="mx-3">
+    <button  class="bg-gray-600 p-4 w-full cta-btn font-semibold py-2 mt-2 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-red-400 flex items-center justify-center" @click.prevent="showFilter=!showFilter">Filter</button>
+    </a>
     <a href={{ url('/fire/create') }} >
     <button  class="bg-red-600 p-4 w-full cta-btn font-semibold py-2 mt-2 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-red-400 flex items-center justify-center">New Report</button>
     </a>
   </div>
+  {{-- filter card --}}
+  <div class="bg-white overflow-auto py-4 my-3" x-show="showFilter">
+    <form class="flex">
+      <div class="mx-2">
+        <label for="" class="block">Date</label>
+        <input type="date" wire:model.lazy="date"  placeholder="">
+      </div>
+      <div class="">
+        <div class="form-group">
+          <label class="block" for="">Crew</label>
+          <select wire:model.lazy="crew" class="form-control">
+            @foreach ($crews as $crew)
+            <option value="{{$crew->id}}">{{$crew->name}}</option>
+            @endforeach
+        
+          </select>
+        </div>
+      
+      </div>
+      
+      <div class="div pt-6">
+        <button wire:click.prevent="search" class="bg-gray-600 p-1 cta-btn font-semibold mx-2 pt-3 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-400 text-center px-4 text-white">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+     
+    </form>
+   
+  </div>
+ {{--End Of filter card --}}
   <div class="bg-white overflow-auto">
       <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
           <thead>
@@ -52,14 +85,14 @@
                     {{$fire->extinction_time}}
                 </td>
                 <td class="py-4 px-1 border-b border-grey-light">
-                    <a href="/fire/view/{{$fire->id}}" class="text-indigo-600 hover:text-indigo-900">
-                      <i class="fas fa-eye">view</i>
+                    <a href="/fire/view/{{$fire->id}}" class="hover:text-gray-500">
+                      <i class="fas fa-eye"></i>
                     </a>
-                  <a href="/fire/edit/{{$fire->id}}" class="text-green-600 hover:text-green-900">
-                    <i class="fas fa-edit    ">eddit</i>
+                  <a href="/fire/edit/{{$fire->id}}" class="hover:text-gray-500">
+                    <i class="fas fa-edit    "></i>
                   </a>
-                  <a href="#" class="text-indigo-600 hover:text-indigo-900">
-                    <i class="fa fa-trash text-red-500" aria-hidden="true">delete</i>
+                  <a href="#" class="hover:text-gray-500">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
                     {{-- <button class="bg-red-500 px-2 text-white rounded-sm">Delete</button> --}}
                   </a>
 

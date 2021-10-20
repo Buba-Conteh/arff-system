@@ -7,7 +7,9 @@ use App\Models\Fire;
 use App\Models\FireMediums;
 use Carbon\Carbon;
 use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\App;
 use Livewire\Component;
+use Barryvdh\DomPDF\PDF;
 
 class CreateForm extends Component
 {
@@ -54,13 +56,17 @@ class CreateForm extends Component
     public function store()
     {
         
-
-        
-        Fire::create($this->validate());
-        $this->resetForm();
+        $pdfName='fire'.now().'.pdf';
+        $attribute = $this->validate();
+        $attribute['pdf_url']=$pdfName;
+        $fire = Fire::create($attribute);
         session()->flash('sucess', 'Fire Incident Save Sucessfull');
+        $this->resetValidation();
+        $pdfName='fire'.now().'.pdf';
+        $pdf = App::make('dompdf.wrapper');
+        $pdf = $pdf->loadView('reports-pdf/fire',['fire'=>$fire] );
+        $pdf->save(public_path("storage/fire-reports/".$pdfName), true);
 
-        
     }
 
     public function resetForm()

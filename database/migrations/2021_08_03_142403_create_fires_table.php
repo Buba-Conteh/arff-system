@@ -26,6 +26,7 @@ class CreateFiresTable extends Migration
             $table->foreignId('crew_id')->on('crews');
             $table->string('extinction_time');
             $table->string('crew_commanders_comment');
+            $table->string('pdf_url')->nullable();
             $table->timestamps();
         });
     }

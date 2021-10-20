@@ -9,7 +9,6 @@ use Livewire\Component;
 class Create extends Component
 {
     public $date;
-    public $call_time;
     public $patient_name;
     public $patient_address;
     public $caller_name;
@@ -27,7 +26,6 @@ class Create extends Component
         'patient_address'=>'required',
          'patient_name'=>'required',
         'caller_name'=>'required',
-        'call_time'=>'required',
         'time_collected'=>'required',
         'depature_time'=>'required',
         'hospital_arrival_time'=>'required',
@@ -58,7 +56,6 @@ class Create extends Component
     public function resetForm()
     {
         $this->date='';
-        $this->call_time='';
         $this->patient_name='';
         $this->patient_address='';
         $this->caller_name='';

@@ -10,4 +10,8 @@ class Ambulance extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function crew()
+    {
+        return $this->belongsTo(Crew::class);
+    }
 }
