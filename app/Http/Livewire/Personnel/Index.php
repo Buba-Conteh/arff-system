@@ -17,10 +17,10 @@ class Index extends Component
     protected $rules = [
         'name' => 'required',
         'phone' => 'required',
-        'address'=>'required',
-        'rank_id'=>'required',
+        'address' => 'required',
+        'rank_id' => 'required',
 
-        
+
     ];
 
     public function render()
@@ -32,7 +32,7 @@ class Index extends Component
 
     public function store()
     {
-      
+
         Personnel::create($this->validate());
         session()->flash('sucess', 'Fire Incident Save Sucessfull');
         $this->resetValidation();
@@ -40,17 +40,16 @@ class Index extends Component
 
     public function edit(Personnel $personnel)
     {
-       $this->personnel=$personnel->id;
-       $this->name=$personnel->name;
-       $this->phone = $personnel->phone;
-       $this->address = $personnel->address;
-       $this->rank_id = $personnel->rank_id;
+        $this->personnel = $personnel->id;
+        $this->name = $personnel->name;
+        $this->phone = $personnel->phone;
+        $this->address = $personnel->address;
+        $this->rank_id = $personnel->rank_id;
     }
     public function update()
-{
-    $personnel=Personnel::find($this->personnel);
-   $personnel->update($this->validate());
-   session()->flash('sucess', 'Rank Successfully updated');
-}
-
+    {
+        $personnel = Personnel::find($this->personnel);
+        $personnel->update($this->validate());
+        session()->flash('sucess', 'Rank Successfully updated');
+    }
 }

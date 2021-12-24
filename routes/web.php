@@ -11,8 +11,10 @@ use App\Http\Livewire\Fire\Index;
 use App\Http\Livewire\Fire\View;
 use App\Http\Livewire\FireMediums\Create as FireMediumsCreate;
 use App\Http\Livewire\FireMediums\Index as FireMediumsIndex;
+use App\Http\Livewire\Leave\Index as LeaveIndex;
 use App\Http\Livewire\Personnel\Index as PersonnelIndex;
 use App\Http\Livewire\Ranks\Index as RanksIndex;
+use App\Models\AnnualLeave;
 use App\Models\Fire;
 use Illuminate\Support\Facades\Route;
 
@@ -74,6 +76,12 @@ Route::prefix('ranks')->middleware(['auth:sanctum', 'verified'])->group( functio
 Route::prefix('personnel')->middleware(['auth:sanctum', 'verified'])->group( function ()
 {
     Route::get('/', PersonnelIndex::class);
+
+});
+
+Route::prefix('leaves')->middleware(['auth:sanctum', 'verified'])->group( function ()
+{
+    Route::get('/', LeaveIndex::class);
 
 });
 

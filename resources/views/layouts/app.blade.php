@@ -68,11 +68,19 @@
                           {{-- <i class="fas fa-users mr-3"></i> --}}
                             Ranks
                         </a>
+
                         <a href="{{url('/personnel')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                             <i class="fas fa-shield-alt mr-3"></i>
                           {{-- <i class="fas fa-users mr-3"></i> --}}
                             Personnels
                         </a>
+
+                        <a href="{{url('/leaves')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                            <i class="fas fa-shield-alt mr-3"></i>
+                          {{-- <i class="fas fa-users mr-3"></i> --}}
+                           Annual leaves
+                        </a>
+                       
                        
                         
                     </nav>

@@ -18,7 +18,7 @@ class AnnualLeaves extends Migration
             $table->id();
             $table->foreignId('personnel_id')->on('personnel');
             $table->string('start_date');
-            $table->string('ende_date');
+            $table->string('end_date');
             $table->string('number_of_days');
             $table->timestamps();
         });
