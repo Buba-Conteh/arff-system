@@ -14,6 +14,7 @@ use App\Http\Livewire\FireMediums\Index as FireMediumsIndex;
 use App\Http\Livewire\Leave\Index as LeaveIndex;
 use App\Http\Livewire\Personnel\Index as PersonnelIndex;
 use App\Http\Livewire\Ranks\Index as RanksIndex;
+use App\Models\Ambulance;
 use App\Models\AnnualLeave;
 use App\Models\Fire;
 use Illuminate\Support\Facades\Route;
@@ -73,6 +74,7 @@ Route::prefix('ranks')->middleware(['auth:sanctum', 'verified'])->group( functio
 });
 
 
+
 Route::prefix('personnel')->middleware(['auth:sanctum', 'verified'])->group( function ()
 {
     Route::get('/', PersonnelIndex::class);
@@ -87,6 +89,9 @@ Route::prefix('leaves')->middleware(['auth:sanctum', 'verified'])->group( functi
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+   $fireAmount = Fire::whereMonth('created_at', date('m'))->count();
+   $ambulanceAmount = Ambulance::whereMonth('created_at', date('m'))->count();
+   $leaveAmount = AnnualLeave::whereMonth('created_at', date('m'))->count();
+    return view('dashboard', compact('fireAmount', 'ambulanceAmount', 'leaveAmount'));
 })->name('dashboard');
 

@@ -19,6 +19,7 @@ class Personnels extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->foreignId('rank_id')->on('ranks');
+            $table->foreignId('crew_id')->on('crews');
             $table->timestamps();
         });
     }

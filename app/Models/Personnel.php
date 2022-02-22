@@ -14,4 +14,9 @@ class Personnel extends Model
     {
        return $this->hasOne(Rank::class,'id');
     }
+
+    public function crew()
+    {
+       return $this->belongsTo(Crew::class);
+    }
 }
