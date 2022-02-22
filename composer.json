@@ -17,6 +17,7 @@
         "livewire/livewire": "^2.5",
         "mediconesystems/livewire-datatables": "^0.6.8"
     },
+  
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
@@ -32,6 +33,10 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
+    "post-install-cmd": [
+        "php artisan clear-compiled",
+        "chmod -R 777 public/"
+    ],
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
